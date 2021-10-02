@@ -1,0 +1,10 @@
+ShipForceMagnitude 4.1
+ShipRotationSpeed 5.1
+BulletSpeed 0.14
+RockMinForceMagnitude 4.1
+RockMaxForceMagnitude 5.1
+RockMinTorque 15.1
+RockMaxTorque 20.1
+BulletPoolCapacity 15
+RockPoolCapacity 20
+MAXBigRockOnScreen 7

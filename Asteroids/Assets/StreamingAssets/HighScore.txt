@@ -1,0 +1,4 @@
+emon,147
+rahi,18
+rahim,9
+e,0
