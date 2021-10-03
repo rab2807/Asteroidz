@@ -8,3 +8,6 @@ RockMaxTorque 20.1
 BulletPoolCapacity 15
 RockPoolCapacity 20
 MAXBigRockOnScreen 7
+minRockSpawnTime 3
+maxRockSpawnTime 5
+particleFadeSpeed 0.85

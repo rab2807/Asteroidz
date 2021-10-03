@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public static class HighScore
@@ -69,8 +68,8 @@ public static class HighScore
             if (scoreChart[9].Item2 > score) return;
             scoreChart[9] = new Tuple<string, int>(name, score);
         }
+        else scoreChart.Add(new Tuple<string, int>(name, score));
 
-        scoreChart.Add(new Tuple<string, int>(name, score));
         scoreChart.Sort((i1, i2) => i2.Item2.CompareTo(i1.Item2));
         WriteData();
     }

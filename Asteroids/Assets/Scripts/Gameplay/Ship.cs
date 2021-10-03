@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour
     private Rigidbody2D rb2d;
     private float rotationSpeed = ConfigurationData.GetData().ShipRotationSpeed;
     private float forceMagnitude = ConfigurationData.GetData().ShipForceMagnitude;
+    private float reverseForceMagnitude = .1f;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class Ship : MonoBehaviour
 
             if (input3 > 0 && shootFlag)
             {
+                ReverseForce();
                 Shoot(GameManager.GetBullet());
                 shootFlag = false;
                 shootTimer.ScheduleTask(() => { shootFlag = true; });
@@ -52,6 +54,12 @@ public class Ship : MonoBehaviour
     {
         float angle = gameObject.transform.localEulerAngles.z * Mathf.PI / 180;
         rb2d.AddForce(input * forceMagnitude * new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)), ForceMode2D.Force);
+    }
+
+    private void ReverseForce()
+    {
+        float angle = gameObject.transform.localEulerAngles.z * Mathf.PI / 180;
+        rb2d.AddForce(-reverseForceMagnitude * new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)), ForceMode2D.Impulse);
     }
 
     private void Shoot(GameObject bullet)

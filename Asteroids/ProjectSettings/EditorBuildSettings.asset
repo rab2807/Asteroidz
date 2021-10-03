@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlay.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/HelpMenu.unity
-    guid: da4c56581c037034fa030426fe94edb5
-  - enabled: 1
     path: Assets/Scenes/HighScoreMenu.unity
     guid: 74325d53138489e419ce939d6e0a643b
+  - enabled: 1
+    path: Assets/Scenes/HelpMenu.unity
+    guid: da4c56581c037034fa030426fe94edb5
   m_configObjects: {}

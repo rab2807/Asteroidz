@@ -44,6 +44,9 @@ public class Rock : MonoBehaviour
         if (obj.GetComponent<Bullet>() != null)
         {
             AudioManager.Play(AudioName.Rock);
+            rb2d.velocity = Vector2.zero;
+            GameManager.ReturnRock(gameObject);
+
             hud.UpdateScore(4 - type);
             GameManager.ReturnBullet(obj);
             if (type == 1) SpawnTwoRocks(2);
@@ -54,10 +57,11 @@ public class Rock : MonoBehaviour
         else if (obj.GetComponent<Ship>() != null)
         {
             AudioManager.Play(AudioName.GameOver);
-            MenuManager.GoTo(MenuName.GameOver);
+            ParticleRenderer.EmitParticles(obj);
+            ParticleRenderer.EmitParticles(obj);
+            Destroy(obj);
+            gameObject.AddComponent<Timer>().ScheduleTask(1, () => MenuManager.GoTo(MenuName.GameOver));
         }
-
-        GameManager.ReturnRock(gameObject);
     }
 
     private void SpawnTwoRocks(int type)

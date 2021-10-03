@@ -5,6 +5,8 @@ public class RockSpawner : MonoBehaviour
 {
     private Timer timer;
     private int maxBigRockNum = ConfigurationData.GetData().MAXBigRockOnScreen;
+    private float minRockSpawnTime = ConfigurationData.GetData().MinRockSpawnTime;
+    private float maxRockSpawnTime = ConfigurationData.GetData().MaxRockSpawnTime;
 
     private void Start()
     {
@@ -19,7 +21,7 @@ public class RockSpawner : MonoBehaviour
         int bigRockNum = GameObject.FindGameObjectsWithTag("BigRock").Length;
         if (bigRockNum < maxBigRockNum)
             ThrowRock(SpawnRock(1));
-        timer.ScheduleTask(Random.Range(3.0f, 5), Generate);
+        timer.ScheduleTask(Random.Range(minRockSpawnTime, maxRockSpawnTime), Generate);
     }
     
     public static GameObject SpawnRock(int type)

@@ -21,15 +21,17 @@ public class Timer : MonoBehaviour
     public float TargetTime
     {
         get => targetTime;
-        set => targetTime = value;
+        set
+        {
+            if (!isStarted) targetTime = value;
+        }
     }
 
     public void ScheduleTask(float targetTime, Action func)
     {
-        if (targetTime < 0) Debug.Log("invalid time");
-        
         this.targetTime = targetTime;
-        ScheduleTask(func);
+        if (targetTime > 0) ScheduleTask(func);
+        else Debug.Log("invalid time");
     }
 
     public void ScheduleTask(Action func)
@@ -46,9 +48,7 @@ public class Timer : MonoBehaviour
     private IEnumerator SpendTime()
     {
         isStarted = true;
-        // isFinished = false;
         yield return new WaitForSeconds(targetTime);
-        // isFinished = true;
         isStarted = false;
         func();
     }

@@ -23,9 +23,9 @@ public class HighScoreMenu : MonoBehaviour
         int i = 1;
         foreach (var score in scoreChart)
         {
-            sb.Append((i++ + ".").PadRight(15, ' '));
-            sb.Append(score.Item1.PadRight(20, ' '));
-            sb.Append(score.Item2.ToString().PadRight(10, ' '));
+            sb.Append(i++ + "." + "  ");
+            sb.Append(score.Item1 + "  -  ");
+            sb.Append(score.Item2);
             sb.Append("\n");
         }
 

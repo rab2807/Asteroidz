@@ -9,7 +9,7 @@ using UnityEngine;
 public class ConfigurationData
 {
     #region Fields
-    
+
     private static ConfigurationData data;
     private const string FileName = "ConfigurationData.txt";
 
@@ -20,11 +20,14 @@ public class ConfigurationData
     private float rockMaxForceMagnitude;
     private float rockMinTorque;
     private float rockMaxTorque;
+    private float minRockSpawnTime;
+    private float maxRockSpawnTime;
+    private float particleFadeSpeed;
 
     private int bulletPoolCapacity;
     private int rockPoolCapacity;
     private int maxBigRockOnScreen;
-    
+
     #endregion
 
     #region Properties
@@ -48,6 +51,12 @@ public class ConfigurationData
     public int RockPoolCapacity => rockPoolCapacity;
 
     public int MAXBigRockOnScreen => maxBigRockOnScreen;
+
+    public float MinRockSpawnTime => minRockSpawnTime;
+
+    public float MaxRockSpawnTime => maxRockSpawnTime;
+
+    public float ParticleFadeSpeed => particleFadeSpeed;
 
     #endregion
 
@@ -93,6 +102,9 @@ public class ConfigurationData
         bulletPoolCapacity = int.Parse(entry[7][1]);
         rockPoolCapacity = int.Parse(entry[8][1]);
         maxBigRockOnScreen = int.Parse(entry[9][1]);
+        minRockSpawnTime = float.Parse(entry[10][1]);
+        maxRockSpawnTime = float.Parse(entry[11][1]);
+        particleFadeSpeed = float.Parse(entry[12][1]);
     }
 
     public static ConfigurationData GetData()
