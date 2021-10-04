@@ -5,7 +5,7 @@ You can download the game from [here](https://drive.google.com/drive/folders/1OG
 
 The rule is simple. Shoot and destroy as many asteroids as you can. You can see the controls in Help Menu.
 
-<img src="https://user-images.githubusercontent.com/76392266/135817109-0ae49c24-22ce-40d3-9a7e-05acb808788f.png" width=855 height=480>
+<img src="https://user-images.githubusercontent.com/76392266/135817109-0ae49c24-22ce-40d3-9a7e-05acb808788f.png">
 
 https://user-images.githubusercontent.com/76392266/135816650-e09909fd-007b-4b98-9aa0-b16f35f92363.mp4
 
