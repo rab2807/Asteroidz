@@ -57,6 +57,7 @@ public class Rock : MonoBehaviour
         else if (obj.GetComponent<Ship>() != null)
         {
             AudioManager.Play(AudioName.GameOver);
+            gameObject.layer = 8;
             ParticleRenderer.EmitParticles(obj);
             ParticleRenderer.EmitParticles(obj);
             Destroy(obj);

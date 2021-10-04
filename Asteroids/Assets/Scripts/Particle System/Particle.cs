@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Particle
 {
-    protected ObjectPool pool;
+    private ObjectPool pool;
     protected GameObject[] particles;
     protected float fadeSpeed = ConfigurationData.GetData().ParticleFadeSpeed;
     protected Vector3 position;

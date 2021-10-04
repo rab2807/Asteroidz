@@ -19,12 +19,13 @@ public class GameOverMenu : MonoBehaviour
         replayButton.interactable = exitButton.interactable = false;
         replayButton.GetComponentInChildren<Text>().color =
             exitButton.GetComponentInChildren<Text>().color = Color.gray;
+        GameObject.FindGameObjectWithTag("HUD").GetComponentInChildren<Button>().interactable = false;
     }
 
     public void Submit()
     {
         AudioManager.Play(AudioName.Button);
-        
+
         string name = inputField.text.Trim();
         if (!name.Equals(""))
         {
