@@ -9,6 +9,3 @@ To run the project, open the project in Unity and Unity will download all depend
 <img src="https://user-images.githubusercontent.com/76392266/135817109-0ae49c24-22ce-40d3-9a7e-05acb808788f.png">
 
 https://user-images.githubusercontent.com/76392266/135816650-e09909fd-007b-4b98-9aa0-b16f35f92363.mp4
-
-
-
